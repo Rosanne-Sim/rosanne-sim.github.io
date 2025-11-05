@@ -2,83 +2,150 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Rosanne Sim | Data Analytics Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- Playfair = classy, Inter = clean -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
   <style>
+    :root {
+      --navy: #0f172a;
+      --cream: #f7f3ec;
+      --gold: #d4a75f;
+      --ink: #1f2937;
+    }
+    * { box-sizing: border-box; }
     body {
-      font-family: 'Helvetica Neue', Arial, sans-serif;
-      background-color: #f8f9fb;
-      color: #1f2937;
-      text-align: center;
       margin: 0;
-      padding: 60px 20px;
+      background: var(--cream);
+      color: var(--ink);
+      font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      line-height: 1.6;
+    }
+    .page {
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 3.5rem 1.5rem 4rem;
+      text-align: center;
+    }
+    .tagline {
+      letter-spacing: .25em;
+      text-transform: uppercase;
+      font-size: .7rem;
+      color: rgba(15, 23, 42, 0.6);
+      margin-bottom: 1.1rem;
     }
     h1 {
-      font-size: 2.5rem;
-      margin-bottom: 0.3rem;
+      font-family: 'Playfair Display', 'Times New Roman', serif;
+      font-size: clamp(2.7rem, 3.2vw, 3.4rem);
+      margin: 0 0 1.3rem;
+      color: var(--navy);
     }
-    h2 {
+    .sub {
+      max-width: 650px;
+      margin: 0 auto 2.5rem;
+      font-size: 1rem;
+    }
+    .project-grid {
+      display: flex;
+      gap: 1.1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-bottom: 2.6rem;
+    }
+    .project-card {
+      background: #fff;
+      border: 1px solid rgba(15, 23, 42, 0.05);
+      border-top: 4px solid var(--gold);
+      border-radius: 1rem;
+      padding: 1.25rem 1.3rem 1.1rem;
+      width: min(280px, 100%);
+      text-align: left;
+      box-shadow: 0 12px 40px rgba(15, 23, 42, 0.06);
+      transition: transform .2s ease, box-shadow .2s ease;
+    }
+    .project-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 16px 50px rgba(15, 23, 42, 0.08);
+    }
+    .project-title {
+      font-weight: 600;
+      margin-bottom: .35rem;
+      color: var(--navy);
+      display: flex;
+      gap: .5rem;
+      align-items: center;
+    }
+    .badge {
+      background: rgba(212, 167, 95, .15);
+      color: var(--navy);
+      border-radius: 999px;
+      padding: .25rem .6rem;
+      font-size: .6rem;
+      letter-spacing: .04em;
+      text-transform: uppercase;
+    }
+    .more {
+      margin-top: 1.5rem;
       font-weight: 500;
-      color: #374151;
-      margin-top: 2rem;
     }
-    p {
-      max-width: 600px;
-      margin: 10px auto 40px;
-      font-size: 1.1rem;
-      line-height: 1.6;
-      color: #4b5563;
+    .footer {
+      margin-top: 3rem;
+      font-size: .75rem;
+      color: rgba(15, 23, 42, 0.5);
     }
-    ul {
-      list-style-type: none;
-      padding: 0;
-    }
-    li {
-      margin: 12px 0;
-    }
-    a {
+    .btn-inline {
+      display: inline-block;
+      margin-top: .85rem;
+      font-size: .7rem;
+      color: var(--navy);
       text-decoration: none;
-      background-color: #1f2937;
-      color: white;
-      padding: 12px 25px;
-      border-radius: 6px;
-      transition: all 0.3s ease;
-      font-weight: 500;
+      border-bottom: 1px solid rgba(15, 23, 42, 0.15);
     }
-    a:hover {
-      background-color: #2563eb;
-      transform: translateY(-2px);
-    }
-    footer {
-      margin-top: 60px;
-      font-size: 0.9rem;
-      color: #6b7280;
+    @media (max-width: 600px) {
+      .page { padding-top: 3rem; }
+      .project-card { width: 100%; }
     }
   </style>
 </head>
-
 <body>
-  <h1>👋 Hi, I’m Rosanne Sim</h1>
-  <p>
-    Welcome to my <strong>Data Analytics Portfolio</strong> — a collection of SQL and Power BI projects where I transform data into insights and visual stories.
-  </p>
+  <main class="page">
+    <div class="tagline">DATA ANALYTICS PORTFOLIO</div>
+    <h1>Hi, I’m Rosanne Sim</h1>
+    <p class="sub">
+      I analyse data and present it in clear, business-friendly visuals. Below are selected projects in
+      <strong>SQL</strong> and <strong>Power BI</strong> — with more Python and R work on the way.
+    </p>
 
-  <ul>
-    <li>
-      <a href="https://github.com/Rosanne-Sim/IBM-SQL-Chicago-Analysis" target="_blank">
-        🗂 IBM SQL Chicago Analysis
-      </a>
-    </li>
-    <li>
-      <a href="https://github.com/Rosanne-Sim/powerbi-dashboard-portfolio" target="_blank">
-        📊 Power BI Dashboard Portfolio
-      </a>
-    </li>
-  </ul>
+    <div class="project-grid">
+      <article class="project-card">
+        <div class="project-title">
+          🗂️ IBM SQL Chicago Analysis
+          <span class="badge">SQL</span>
+        </div>
+        <p>Exploring socioeconomic, education & crime datasets in Chicago with structured queries and insights.</p>
+        <a href="#" class="btn-inline">View project →</a>
+      </article>
 
-  <h2>✨ More projects coming soon</h2>
-  <p>Follow my journey as I expand my portfolio with Python, R, and visualization projects.</p>
+      <article class="project-card">
+        <div class="project-title">
+          📊 Power BI Dashboard Portfolio
+          <span class="badge">Power BI</span>
+        </div>
+        <p>Interactive dashboards designed for stakeholders — clean layouts, DAX, and drilldown views.</p>
+        <a href="#" class="btn-inline">View dashboards →</a>
+      </article>
 
-  <footer>© 2025 Rosanne Sim | Built with 💻 & ☕</footer>
-</body>
-</html>
+      <article class="project-card">
+        <div class="project-title">
+          ✨ More projects coming
+          <span class="badge">In progress</span>
+        </div>
+        <p>Python EDA, R visualisations and mini business case studies will be added here.</p>
+      </article>
+    </div>
+
+    <p class="more">Want to connect? Add me on LinkedIn or view my GitHub for the source code.</p>
+
+    <div cla
